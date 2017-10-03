@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>EReady</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300i,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+  <link rel="stylesheet" href="./css/master.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  <script type="text/javascript" src="./js/main.js"></script>
+</head>
+
+<body>
+  <div class="container" ng-app="app" ng-controller="main">
+    <div class="nav flex">
+      <div data="0" ng-click="navigate($event)" class="logo flex pointer">
+        <!-- <p class="logoText"> {{company}} </p> -->
+        <div class="logoBox">
+          <div class="e flex">E<span class="logoFinish">ntertainment</span></div>
+          <div class="r flex">R<span class="logoFinish">eady</span></div>
+          <dix class="letterHolder">
+            <div class="e flex letters">E<span class="logoFinish">ntertainment</span></div>
+            <div class="r flex letters">R<span class="logoFinish">eady</span></div>
+          </dix>
+        </div>
+      </div>
+      <div class="menu flex">
+        <div data="0" ng-click="navigate($event)" class="menuOption pointer homeNav menuHighlight">Home</div>
+        <div data="1" ng-click="navigate($event)" class="menuOption pointer aboutNav">About Us</div>
+        <div data="2" ng-click="navigate($event)" class="menuOption pointer eventNav">Events</div>
+        <div data="3" ng-click="navigate($event)" class="menuOption pointer membershipsNav">Memberships</div>
+        <div data="4" ng-click="navigate($event)" class="menuOption pointer partnerships">Partnerships</div>
+        <div data="5" ng-click="navigate($event)" class="menuOption pointer contactNav menuOptionLast">Contact</div>
+      </div>
+    </div>
+    <div class="changingbackground flex">
+      <div class="colorBoxHolder flex">
+        <div data="{{ box }}" class="colorBox" ng-repeat="box in boxes"></div>
+      </div>
+    </div>
+    <div class="changingbackground liner"></div>
+    <div class="intro flex">
+      <div class="action flex">
+        <div class="pages flex">
+          <p class="hometext pointer">Join our <span class="purpleText">dating</span> community</p>
+        </div>
+        <div class="pages flex">
+          <p class="pageTitle"><span class="purpleText">A</span>bout Us</p>
+          <p class="pageBody">
+            <span class="businessName">Entertainment Ready</span> is an entertainment company that specializes in singles events in the Philadelphia Area. Instead of focusing on match making, we create environments for singles to meet other singles.
+          </p>
+          <!-- <p class="pageBody flex">
+            We also take dating experiences to an excitingly new level by reviving the word FUN, as a verb. We take your most memorable experiences and challenge them, we take your best you and make her shine.
+          </p> -->
+          <!-- <p class="pageBody flex">
+            By preserving the face-to-face dating experience and combining it with fun games designed to authenticate and rejuvenate, we have been able to create a recipe for a lifetime of success stories.
+          </p> -->
+          <p class="pageBody">
+             So, if you are single and are in the Philadelphia area, come check out one of our events.
+          </p>
+        </div>
+        <div class="pages flex">
+          <div class="flex eventPageBody">
+            <p class="pageTitle"><span class="purpleText">E</span>vents</p>
+            <p class="pageBody">
+              <span class="businessName">Entertainment Ready</span> hosts singles events throughout the year. These events may include: Fun and familiar game shows customized for our singles. We have also created original fun games and activities
+              to break the ice and keep our singles engaged. Check out our upcoming events for this month.
+            </p>
+          </div>
+          <div class="eventPreview">
+            <div class="eventHeading flex">
+              <p>Upcoming Events</p>
+            </div>
+            <div class="eventPreviewBox flex">
+              <div class="event flex oddEvent firstBox">
+                <p>Speed Dating</p>
+                <p class="date">Oct. 26</p>
+              </div>
+              <div class="event flex evenEvent secondBox">
+                <p>Get-To-Know</p>
+                <p class="date">Oct. 30</p>
+              </div>
+              <div class="event flex oddEvent thirdBox">
+                <p>Speed Dating</p>
+                <p class="date">Nov. 3</p>
+              </div>
+              <div class="event flex evenEvent fourthBox">
+                <p>Ice Cream Social</p>
+                <p class="date">Every Friday</p>
+              </div>
+            </div>
+            <div class="eventDetails flex">
+              <p>Speed Dating</p>
+              <p>Oct. 26</p><br>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ultricies gravida nulla et condimentum. Fusce hendrerit tortor at nisi ullamcorper elementum. Curabitur dictum leo ac ligula vulputate, auctor tempor nisi cursus. Fusce sed sagittis magna, vel ultrices justo. Donec ante felis, posuere sollicitudin ligula sit amet, volutpat elementum dolor.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="pages flex">
+          <p class="pageTitle"><span class="purpleText">M</span>emberships</p>
+          <p class="pageBody">
+            Memberships are not available at this time. Please contact our office for more information.
+          </p>
+        </div>
+        <div class="pages flex">
+          <p class="pageTitle"><span class="purpleText">P</span>artnerships</p>
+          <p class="pageBody">
+             <span class="businessName">Entertainment Ready</span> welcomes partnerships with local businesses, non-profit organizations, professionals offering related specialized services, and interns in the Philadelphia area. If you are interested and would like more information, please email us
+            at: entertainmentready@yahoo.com
+          </p>
+        </div>
+        <div class="pages flex">
+          <p class="pageTitle"><span class="purpleText">C</span>ontact Us</p>
+          <div class="contactPageBody flex">
+            <div class="c-icon pointer"><img class="contact-icon" src="./img/facebook.png" alt=""> facebook.com/entertainmentready</div>
+            <div class="c-icon pointer"><img class="contact-icon" src="./img/twitter.png" alt=""> entertainmentready@MalibuD2</div>
+            <div class="c-icon pointer"><img class="contact-icon" src="./img/youtube.png" alt=""> entertainmentreadytv</div>
+            <div class="c-icon pointer"><img class="contact-icon" src="./img/yahoo.jpg" alt=""> entertainmentready@yahoo.com</div>
+          </div>
+        </div>
+      </div>
+      <div class="picSection flex">
+        <div class="pic picOne"></div>
+        <div class="pic picTwo"></div>
+        <div class="pic picThree"></div>
+        <div class="pic picFour"></div>
+        <div class="pic picFive"></div>
+        <div class="pic picSix"></div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
