@@ -1,5 +1,5 @@
 html, body {
-  /*color: #FFF;//////////////////////////////////////////////////////////////*/
+  color: #310066;
   font-family: 'Open Sans Condensed', sans-serif;
   margin: 0;
   overflow: hidden;
@@ -33,10 +33,10 @@ html, body {
 .logoBox {
   color: #fff;
   font-family: 'Courgette', cursive;
-  font-size: 0.3em;
-  height: 11em;
+  font-size: 0.2em;
+  height: 8em;
   position: relative;
-  width: 17em;
+  width: 11em;
 }
 
 .e, .r {
@@ -80,7 +80,7 @@ html, body {
 
 .nav {
   /*background-color: #5C00BB;///////////////////////////////////////////////*/
-  background-color: #000;
+  background-color: #190033;
   height: 10vh;
   justify-content: space-between;
   left: 0;
@@ -91,7 +91,7 @@ html, body {
 }
 
 .menu {
-  font-size: 1.4em;
+  font-size: 1em;
   justify-content: space-between;
   margin-right: 6em;
   width: 26em;
@@ -102,7 +102,7 @@ html, body {
 }
 
 .menuOption:hover, .menuHighlight {
-  font-size: 1.4em;
+  font-size: 1.6em;
 }
 
 .menuOption {
@@ -119,11 +119,18 @@ html, body {
 
 .purpleText {
   color: #4d0099;
+  font-size: 1.8em;
+}
+
+.purpleLetter {
+  background-color: #4d0099;
+  color: #fff;
+  font-size: 1em;
+  padding: 0 0.1em;
 }
 
 .changingbackground {
   align-items: center;
-  /*background-color: #470091;///////////////////////////////////////////////*/
   height: 90vh;
   position: absolute;
   top: 10vh;
@@ -137,8 +144,6 @@ html, body {
 }
 
 .colorBoxHolder {
-  /*filter: blur(4px);///////////////////////////////////////////////////////*/
-  filter: blur(2px);
   flex-wrap: wrap;
   height: 44em;
   opacity: 0.4;
@@ -146,15 +151,13 @@ html, body {
 }
 
 .colorBox {
-  /*background-color: #470091;///////////////////////////////////////////////*/
   height: 20%;
-  opacity: 0.4;
+  opacity: 0.2;
   transition: background-color 1s;
   width: 20%;
 }
 
 .intro {
-  /*background-color: #470091;*/
   height: 540vh;
   justify-content: space-between;
   position: relative;
@@ -189,26 +192,28 @@ html, body {
 }
 
 .pageTitle {
-  font-size: 6em;
-  margin: 0;
+  align-self: flex-start;
+  font-size: 5em;
+  margin: 0 0 0.1em 0;
   z-index: 5;
 }
 
 .pageBody {
+  align-self: flex-start;
   flex-direction: column;
-  font-size: 2em;
-  margin: 1em;
+  font-size: 1.6em;
+  margin: 0 0 1em 0;
   width: 50vw;
   z-index: 5;
 }
 
 .hometext {
-  font-size: 8rem;
+  font-size: 5rem;
 }
 
-.hometext:hover {
-  font-size: 9rem;
-}
+/*.hometext:hover {
+  font-size: 7rem;
+}*/
 
 .picSection {
   background-color: #470091;/*///////////////////////////////////////////////*/
@@ -230,6 +235,7 @@ html, body {
 
 .contactPageBody {
   align-items: flex-start;
+  align-self: flex-start;
   flex-direction: column;
   margin-top: 2em;
 }
@@ -278,11 +284,7 @@ html, body {
 }
 
 .eventPreview {
-  background-color: #000;
   color: #fff;
-  height: 15em;
-  overflow: hidden;
-  transition: height 1s;
   width: 40em;
 }
 
@@ -291,19 +293,38 @@ html, body {
   height: 5em;
 }
 
-.eventHeading p {
-  font-size: 2em;
-  font-weight: ;
+.eventDetailsBox {
+  background-color: #190033;
+  height: 40em;
+  width: 40em;
 }
 
-.eventPreviewBox {
-  height: 10em;
+.eventTitle {
+  background-color: #4d0099;
+  font-size: 1.8em;
+  height: 100%;
+  width: 50%;
+}
+
+.events {
+  height: 100%;
+  width: 50%;
 }
 
 .event {
   flex-direction: column;
-  height: 100%;
-  width: 25%;
+  height: 5em;
+  width: 33.34%;
+}
+
+.event:hover {
+  height: 6em;
+  transition: height 0.5s, width 0.5s;
+  width: 36%;
+}
+
+.event p {
+  margin: 0;
 }
 
 .firstBox {

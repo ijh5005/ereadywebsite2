@@ -2,8 +2,6 @@
 
 $(document).ready(() => {
 
-  //$(".menuOption").click(() => { $(".intro").css("zIndex", -1) });
-
   const fadeInRight = (selector, time) => {
     $(selector).css("color", "#FFF");
 
@@ -28,7 +26,7 @@ const app = angular.module("app", []);
 app.controller("main", ["$scope", "$timeout", "$interval", function($scope, $timeout, $interval){
   $scope.company = "entertainment ready";
 
-  $scope.navigate = (e) => {console.log(e);
+  $scope.navigate = (e) => {
     if($scope.canNav){
       const className = e.target.className;
       const selector = e.target.attributes.data.nodeValue;
@@ -128,22 +126,32 @@ app.controller("main", ["$scope", "$timeout", "$interval", function($scope, $tim
 
   let open = false;
   const $event = $(".eventPreview");
+  const $eventHeading = $(".eventHeading");
   const $eventPageBody = $(".eventPageBody");
+  const $eventDetailsBox = $('.eventDetailsBox');
   const closedHeight = "15em";
   const openHeight = "40em";
+  $eventDetailsBox.fadeOut(10);
 
-  $(".event").click(() => {
+  $scope.eventClick = (e) => {
+    const event = e.currentTarget.className;
     if(open === true){
-      $event.fadeOut().css("height", closedHeight);
-      $timeout(() => {
-        $eventPageBody.fadeIn();
-        $event.fadeIn();
-      }, 600);
+      return null;
     } else if (open === false){
-      $eventPageBody.hide();
-      $event.css("height", openHeight);
+      $eventHeading.fadeOut();
+      $eventPageBody.fadeOut();
+      $timeout(() => {
+        $eventDetailsBox.fadeIn();
+        if(event.includes('firstBox')){
+          console.log('first');
+        } else if (event.includes('secondBox')) {
+          console.log('second');
+        } else if (event.includes('thirdBox')) {
+          console.log('third');
+        }
+      }, 1000);
     }
     open = !open;
-  });
+  }
 
 }]);
