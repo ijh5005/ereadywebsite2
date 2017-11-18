@@ -421,9 +421,38 @@ html, body {
   .contactPageBody {
     align-self: center;
   }
+
+
+
+  body {
+    font-size: 2.3em;
+  }
+
+  .pageBody {
+    margin: 1em 0 1em 0;
+    width: 84%;
+  }
+  .hometext {
+    width: 4em;
+  }
+  .pageBody {
+    display: block;
+    margin: 0 auto;
+  }
+  .eventPreview {
+    margin-top: 1em;
+  }
+  .logoBox {
+    height: 18em;
+    width: 20em;
+  }
+
 }
 
 @media (max-width: 900px) {
+  body {
+    font-size: 1em;
+  }
   .hometext {
     font-size: 3em;
   }
@@ -433,6 +462,10 @@ html, body {
   }
   .event p {
     font-size: 1em;
+  }
+  .logoBox {
+    height: 8em;
+    width: 11em;
   }
 }
 
