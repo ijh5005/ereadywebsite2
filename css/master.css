@@ -145,9 +145,9 @@ html, body {
 
 .colorBoxHolder {
   flex-wrap: wrap;
-  height: 44em;
   opacity: 0.4;
-  width: 44em;
+  height: 78vh;
+  width: 78vh;
 }
 
 .colorBox {
@@ -169,6 +169,7 @@ html, body {
 .intro .action {
   flex-direction: column;
   height: 100%;
+  justify-content: flex-start;
   position: relative;
   top: 0vh;
   transition: top 2s;
@@ -187,6 +188,7 @@ html, body {
 .intro p {
   /*font-size: 8em;*/
   /*font-size: 2em;*/
+  text-align: center;
   transition: font-size 1s;
   z-index: 5;
 }
@@ -241,7 +243,7 @@ html, body {
 }
 
 .c-icon {
-  font-size: 2em;
+  font-size: 1.4em;
   margin: 0.2em 0;
 }
 
@@ -295,8 +297,8 @@ html, body {
 
 .eventDetailsBox {
   background-color: #190033;
-  height: 40em;
-  width: 40em;
+  height: 78vh;
+  width: 78vh;
 }
 
 .eventTitle {
@@ -358,4 +360,95 @@ html, body {
 .eventDetails p {
   font-size: 1.3em;
   width: 26em;
+}
+
+
+
+/*MEDIA QUERY*/
+
+@media (max-hieght: 850px) {
+  .colorBoxHolder {
+
+  }
+}
+
+@media (max-width: 1340px) {
+  .intro .action {
+    width: 100vw;
+  }
+  .picSection {
+    display: none;
+  }
+}
+
+@media (max-width: 1140px) {
+  body {
+    overflow: scroll;
+  }
+  .hometext {
+    font-size: 4em;
+  }
+  .changingbackground,
+  .menu,
+  .eventTitle {
+    display: none;
+  }
+  .eventPreview {
+    width: 90%;
+  }
+  .events {
+    width: 100%;
+  }
+  /*SCROLLBAR STYLNG*/
+  ::-webkit-scrollbar {
+  	width: 0px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+  	background-color: #000;
+  }
+  /*SCROLLBAR STYLNG END*/
+  .evenPage {
+    background-color: hsl(269, 100%, 96%);
+    background-color: #190033;
+    color: #fff;
+  }
+  .pages {
+    width: 100%;
+  }
+  .pageTitle,
+  .pageBody,
+  .contactPageBody {
+    align-self: center;
+  }
+}
+
+@media (max-width: 900px) {
+  .hometext {
+    font-size: 3em;
+  }
+  .pageBody {
+    font-size: 1.4em;
+    margin: 1em 0 1em 0;
+  }
+  .event p {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 690px) {
+  .hometext {
+    width: 8em;
+  }
+  .pageTitle {
+    font-size: 4em;
+  }
+  .pageBody {
+    display: block;
+    margin: 0 auto;
+    width: 14em;
+  }
+  .eventPreview {
+    margin-top: 1em;
+  }
 }
