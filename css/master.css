@@ -81,7 +81,7 @@ html, body {
 .nav {
   /*background-color: #5C00BB;///////////////////////////////////////////////*/
   background-color: #190033;
-  height: 10vh;
+  height: 11vh;
   justify-content: space-between;
   left: 0;
   position: absolute;
@@ -442,6 +442,7 @@ html, body {
   }
   .pageBody {
     display: block;
+    font-size: 1.3em;
     margin: 0 auto;
   }
   .eventPreview {
