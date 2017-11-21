@@ -145,8 +145,8 @@ html, body {
 
 .colorBoxHolder {
   flex-wrap: wrap;
-  opacity: 0.4;
   height: 78vh;
+  opacity: 0.4;
   width: 78vh;
 }
 
@@ -319,11 +319,11 @@ html, body {
   width: 33.34%;
 }
 
-.event:hover {
+/*.event:hover {
   height: 6em;
   transition: height 0.5s, width 0.5s;
   width: 36%;
-}
+}*/
 
 .event p {
   margin: 0;
@@ -360,6 +360,11 @@ html, body {
 .eventDetails p {
   font-size: 1.3em;
   width: 26em;
+}
+
+.contactText {
+  margin: 1em 0 0 0;
+  width: 12em;
 }
 
 
