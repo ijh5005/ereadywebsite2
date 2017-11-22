@@ -411,7 +411,8 @@ html, body {
   /*SCROLLBAR STYLNG END*/
   .evenPage {
     background-color: hsl(269, 100%, 96%);
-    background-color: #190033;
+    /*background-color: #190033;*/
+    background-color: #25004d;
     color: #fff;
   }
   .pages {
