@@ -14,131 +14,227 @@
 
 <body>
   <div class="container" ng-app="app" ng-controller="main">
-    <div class="nav flex">
-      <div data="0" ng-click="navigate($event)" class="logo flex pointer">
-        <!-- <p class="logoText"> {{company}} </p> -->
-        <div class="logoBox">
-          <div class="e flex">E<span class="logoFinish">ntertainment</span></div>
-          <div class="r flex">R<span class="logoFinish">eady</span></div>
-          <dix class="letterHolder">
-            <div class="e flex letters">E<span class="logoFinish">ntertainment</span></div>
-            <div class="r flex letters">R<span class="logoFinish">eady</span></div>
-          </dix>
-        </div>
+
+    <div class="landingPage flex ">
+      <div class="kidsEventsPage flex">
+        <p class="landingPageHead">Plan a play date</p>
+        <p class="landingPageText">seasonal events for children living in or visiting the Philadelphia area</p>
+        <div class="btn flex pointer" ng-click='kidsPage()'><p ng-click='kidsPage()'>Plan</p></div>
       </div>
-      <div class="menu flex">
-        <div data="0" ng-click="navigate($event)" class="menuOption pointer homeNav menuHighlight">Home</div>
-        <div data="1" ng-click="navigate($event)" class="menuOption pointer aboutNav">About Us</div>
-        <div data="2" ng-click="navigate($event)" class="menuOption pointer eventNav">Events</div>
-        <div data="3" ng-click="navigate($event)" class="menuOption pointer membershipsNav">Memberships</div>
-        <div data="4" ng-click="navigate($event)" class="menuOption pointer partnerships">Partnerships</div>
-        <div data="5" ng-click="navigate($event)" class="menuOption pointer contactNav menuOptionLast">Contact</div>
+      <div class="datingEventsPage flex">
+        <p class="landingPageHead">Join our dating community</p>
+        <p class="landingPageText">dating workshops/events for Philadelphia singles, focusing on safety and fun</p>
+        <div class="btn flex pointer" ng-click='datePage()'><p ng-click='datePage()'>Join</p></div>
       </div>
     </div>
-    <div class="changingbackground flex">
-      <div class="colorBoxHolder flex">
-        <div data="{{ box }}" class="colorBox" ng-repeat="box in boxes"></div>
-      </div>
-    </div>
-    <div class="changingbackground liner"></div>
-    <div class="intro flex">
-      <div class="action flex">
-        <div class="pages flex">
-          <p class="hometext pointer">Join our <span class="purpleText"><span class="purpleLetter">d</span>ating</span> community</p>
-        </div>
-        <div class="pages flex evenPage">
-          <p class="pageTitle"><span class="purpleLetter">A</span>bout Us</p>
-          <!-- <p class="pageBody">
-            <span class="businessName">Entertainment Ready</span> is an entertainment company that specializes in singles events in the Philadelphia Area. Instead of focusing on match making, we create environments for singles to meet other singles.
-          </p> -->
-          <!-- <p class="pageBody flex">
-            We also take dating experiences to an excitingly new level by reviving the word FUN, as a verb. We take your most memorable experiences and challenge them, we take your best you and make her shine.
-          </p> -->
-          <!-- <p class="pageBody flex">
-            By preserving the face-to-face dating experience and combining it with fun games designed to authenticate and rejuvenate, we have been able to create a recipe for a lifetime of success stories.
-          </p> -->
-          <!-- <p class="pageBody">
-             So, if you are single and are in the Philadelphia area, come check out one of our events.
-          </p> -->
-          <p class="pageBody">Entertainment Ready is a Life and Wellness company specializing in dating workshops/events for Philadelphia singles, focusing on safety and fun. We call this type of dating, “PG Dating”. We focus not on match making, but the empowerment of our singles by assisting in self discovery and self worth. We blend dating education and fun interactive games tailored to the modern day bachelor and bachelorette. Simply put, we take your best you and make them shine.</p>
-          <p class="pageBody">By taking the face-to-face dating experience and combining it with fun interactive games designed to stimulate real chemistry, we have been able to create the best recipe for a lifetime of success stories.</p>
-          <p class="pageBody">Entertainment Ready also hosts seasonal kids workshops/events</p>
-        </div>
-        <div class="pages flex">
-          <div class="flex eventPageBody">
-            <p class="pageTitle"><span class="purpleLetter">E</span>vents</p>
-            <!-- <p class="pageBody">
-              <span class="businessName">Entertainment Ready</span> hosts singles events throughout the year. These events may include: Fun and familiar game shows customized for our singles. We have also created original fun games and activities
-              to break the ice and keep our singles engaged. Check out our upcoming events for this month.
-            </p> -->
-            <p class="pageBody">Entertainment Ready hosts singles events each month throughout the year. These events may resemble fun and familiar game shows such as; Family Feud and The Dating Game. We also have fun games and activities to break the ice and keep our daters engaged. Check out our upcoming events for this month and if any event catches your eye, simply SIGN UP.</p>
+
+    <div class="kids none">
+      <div class="nav flex">
+        <div data="0" ng-click="navigate($event)" class="logo flex pointer">
+          <div class="logoBox">
+            <div class="e flex">E<span class="logoFinish">ntertainment</span></div>
+            <div class="r flex">R<span class="logoFinish">eady</span></div>
+            <dix class="letterHolder">
+              <div class="e flex letters">E<span class="logoFinish">ntertainment</span></div>
+              <div class="r flex letters">R<span class="logoFinish">eady</span></div>
+            </dix>
           </div>
+        </div>
+        <div class="menu flex">
+          <div data="0" ng-click="navigate($event)" class="menuOption pointer homeNav menuHighlight">Home</div>
+          <div data="1" ng-click="navigate($event)" class="menuOption pointer aboutNav">About Us</div>
+          <div data="2" ng-click="navigate($event)" class="menuOption pointer eventNav">Events</div>
+          <div data="3" ng-click="navigate($event)" class="menuOption pointer membershipsNav">Memberships</div>
+          <div data="4" ng-click="navigate($event)" class="menuOption pointer partnerships">Partnerships</div>
+          <div data="5" ng-click="navigate($event)" class="menuOption pointer contactNav menuOptionLast">Contact</div>
+        </div>
+      </div>
+      <div class="changingbackground flex">
+        <div class="colorBoxHolder flex">
+          <div data="{{ box }}" class="colorBox" ng-repeat="box in boxes"></div>
+        </div>
+      </div>
+      <div class="changingbackground liner"></div>
+      <div class="intro flex">
+        <div class="action flex">
+          <div class="pages flex">
+            <p class="hometext pointer">Plan a <span class="purpleText"><span class="purpleLetter">P</span>lay</span> date</p>
+          </div>
+          <div class="pages flex evenPage">
+            <p class="pageTitle"><span class="purpleLetter">A</span>bout Us</p>
+            <p class="pageBody">We know Philly has a diverse community of residence who want fun activities for them and their families, that’s why we create age appropriate, fun, educational workshops and seasonal events for children living in or visiting the Philadelphia area. So, come join us for an experience fit for the season.</p>
+          </div>
+          <div class="pages flex">
+            <div class="flex eventPageBody">
+              <p class="pageTitle"><span class="purpleLetter">E</span>vents</p>
+              <p class="pageBody"></p>
+            </div>
 
 
-          <div class="eventPreview">
-            <div class="eventHeading flex">
-              <div class="eventTitle flex">
-                <p>Upcoming Events</p>
-              </div>
-              <div class="events flex">
-                <div class="event flex pointer firstBox"> <!-- ng-click='eventClick($event)'> -->
-                  <!-- <p>Workshop</p> -->
-                  <p class="date">January</p>
+            <div class="eventPreview">
+              <div class="eventHeading flex">
+                <div class="eventTitle flex">
+                  <p>Upcoming Events</p>
                 </div>
-                <div class="event flex pointer secondBox"> <!-- ng-click='eventClick($event)'> -->
-                  <!-- <p>Workshop</p> -->
-                  <p class="date">February</p>
-                </div>
-                <div class="event flex pointer thirdBox"> <!-- ng-click='eventClick($event)'> -->
-                  <!-- <p>Workshop</p> -->
-                  <p class="date">March</p>
+                <div class="events flex">
+                  <div class="event flex pointer firstBox"> <!-- ng-click='eventClick($event)'> -->
+                    <p class="date">January</p>
+                  </div>
+                  <div class="event flex pointer secondBox"> <!-- ng-click='eventClick($event)'> -->
+                    <p class="date">February</p>
+                  </div>
+                  <div class="event flex pointer thirdBox"> <!-- ng-click='eventClick($event)'> -->
+                    <p class="date">March</p>
+                  </div>
                 </div>
               </div>
             </div>
+
+            <div class="eventDetailsBox">
+
+            </div>
+
+
           </div>
-
-          <div class="eventDetailsBox">
-
+          <div class="pages flex evenPage">
+            <p class="pageTitle"><span class="purpleLetter">M</span>emberships</p>
+            <p class="pageBody">Memberships are not available at this time. Feel free to check back for updated information.</p>
           </div>
-
-
-        </div>
-        <div class="pages flex evenPage">
-          <p class="pageTitle"><span class="purpleLetter">M</span>emberships</p>
-          <!-- <p class="pageBody">
-            Memberships are not available at this time. Please contact our office for more information.
-          </p> -->
-          <p class="pageBody">Memberships are not available at this time. Feel free to check back for updated information.</p>
-        </div>
-        <div class="pages flex">
-          <p class="pageTitle"><span class="purpleLetter">P</span>artnerships</p>
-          <!-- <p class="pageBody">
-             <span class="businessName">Entertainment Ready</span> welcomes partnerships with local businesses, non-profit organizations, professionals offering related specialized services, and interns in the Philadelphia area. If you are interested and would like more information, please email us
-            at: entertainmentready@yahoo.com
-          </p> -->
-          <p class="pageBody">Entertainment Ready welcomes partnerships with local businesses (private and public sector), non-profits, professionals that offer related specialized services, and interns in the Philadelphia area. If you are interested and would like more information, please email us at: entertainmentready@gmail.com</p>
-        </div>
-        <div class="pages flex evenPage">
-          <p class="pageTitle"><span class="purpleLetter">C</span>ontact Us</p>
-          <p class="pageBody contactText">Where you can find us:</p>
-          <p class="pageBody contactText">Subscribe to our youtube channel, <br>follow us on twitter, <br>like us on facebook and <br>join the conversation.</p>
-          <div class="contactPageBody flex">
-            <div class="c-icon pointer"><img class="contact-icon" src="./img/facebook.png" alt=""> facebook.com/entertainmentready</div>
-            <div class="c-icon pointer"><img class="contact-icon" src="./img/twitter.png" alt=""> entertainmentready@MalibuD2</div>
-            <div class="c-icon pointer"><img class="contact-icon" src="./img/youtube.png" alt=""> entertainmentreadytv</div>
-            <div class="c-icon pointer"><img class="contact-icon" src="./img/yahoo.jpg" alt=""> entertainmentready@yahoo.com</div>
+          <div class="pages flex">
+            <p class="pageTitle"><span class="purpleLetter">P</span>artnerships</p>
+            <p class="pageBody">Entertainment Ready welcomes partnerships with local businesses (private and public sector), non-profits, professionals that offer related specialized services, and interns in the Philadelphia area. If you are interested and would like more information, please email us at: entertainmentready@gmail.com</p>
+          </div>
+          <div class="pages flex evenPage">
+            <p class="pageTitle"><span class="purpleLetter">C</span>ontact Us</p>
+            <p class="pageBody contactText">Where you can find us:</p>
+            <p class="pageBody contactText">Check out our Youtube channel to see what we’re planning next and the crazy, whacky ways we prepare for events.</p>
+            <div class="contactPageBody flex">
+              <div class="c-icon pointer"><img class="contact-icon" src="./img/youtube.png" alt="">youtube@entertainmentready4kids</div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="picSection flex">
-        <div class="pic picOne"></div>
-        <div class="pic picTwo"></div>
-        <div class="pic picThree"></div>
-        <div class="pic picFour"></div>
-        <div class="pic picFive"></div>
-        <div class="pic picSix"></div>
+        <div class="picSection flex">
+          <div class="pic picOneKid"></div>
+          <div class="pic picTwoKid"></div>
+          <div class="pic picThreeKid"></div>
+          <div class="pic picFourKid"></div>
+          <div class="pic picFiveKid"></div>
+          <div class="pic picSixKid"></div>
+        </div>
       </div>
     </div>
+
+    <div class="dating none">
+      <div class="nav flex">
+        <div data="0" ng-click="navigate($event)" class="logo flex pointer">
+          <!-- <p class="logoText"> {{company}} </p> -->
+          <div class="logoBox">
+            <div class="e flex">E<span class="logoFinish">ntertainment</span></div>
+            <div class="r flex">R<span class="logoFinish">eady</span></div>
+            <dix class="letterHolder">
+              <div class="e flex letters">E<span class="logoFinish">ntertainment</span></div>
+              <div class="r flex letters">R<span class="logoFinish">eady</span></div>
+            </dix>
+          </div>
+        </div>
+        <div class="menu flex">
+          <div data="0" ng-click="navigate($event)" class="menuOption pointer homeNav menuHighlight">Home</div>
+          <div data="1" ng-click="navigate($event)" class="menuOption pointer aboutNav">About Us</div>
+          <div data="2" ng-click="navigate($event)" class="menuOption pointer eventNav">Events</div>
+          <div data="3" ng-click="navigate($event)" class="menuOption pointer membershipsNav">Memberships</div>
+          <div data="4" ng-click="navigate($event)" class="menuOption pointer partnerships">Partnerships</div>
+          <div data="5" ng-click="navigate($event)" class="menuOption pointer contactNav menuOptionLast">Contact</div>
+        </div>
+      </div>
+      <div class="changingbackground flex">
+        <div class="colorBoxHolder flex">
+          <div data="{{ box }}" class="colorBox" ng-repeat="box in boxes"></div>
+        </div>
+      </div>
+      <div class="changingbackground liner"></div>
+      <div class="intro flex">
+        <div class="action flex">
+          <div class="pages flex">
+            <p class="hometext pointer">Join our <span class="purpleText"><span class="purpleLetter">d</span>ating</span> community</p>
+          </div>
+          <div class="pages flex evenPage">
+            <p class="pageTitle"><span class="purpleLetter">A</span>bout Us</p>
+            <p class="pageBody">Entertainment Ready is a entertainment company specializing in dating workshops/events for Philadelphia singles, focusing on safety and fun. We have coined this style of dating, “PG Dating” as our workshops and events are meant to PREPARE and GUIDE our singles in the dating world. We focus not on match-making, rather, the empowerment of our singles by using self discovery and teaching self worth. We blend dating education and fun interactive games tailored to the modern day bachelor and bachelorette..</p>
+            <p class="pageBody">By taking the face-to-face dating experience in combination with fun interactive games to stimulate real chemistry, we have been able to create the best recipe for a lifetime of success stories.</p>
+          </div>
+          <div class="pages flex">
+            <div class="flex eventPageBody">
+              <p class="pageTitle"><span class="purpleLetter">E</span>vents</p>
+              <p class="pageBody">Entertainment Ready hosts workshops and events each month, throughout the year. These workshops/events may resemble fun and familiar game shows such as; Family Feud and The Dating Game. Check out our upcoming events for this month and if any event catches your eye, simply SIGN UP.</p>
+            </div>
+
+
+            <div class="eventPreview">
+              <div class="eventHeading flex">
+                <div class="eventTitle flex">
+                  <p>Upcoming Events</p>
+                </div>
+                <div class="events flex">
+                  <div class="event flex pointer firstBox"> <!-- ng-click='eventClick($event)'> -->
+                    <!-- <p>Workshop</p> -->
+                    <p class="date">January</p>
+                  </div>
+                  <div class="event flex pointer secondBox"> <!-- ng-click='eventClick($event)'> -->
+                    <!-- <p>Workshop</p> -->
+                    <p class="date">February</p>
+                  </div>
+                  <div class="event flex pointer thirdBox"> <!-- ng-click='eventClick($event)'> -->
+                    <!-- <p>Workshop</p> -->
+                    <p class="date">March</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="eventDetailsBox">
+
+            </div>
+
+
+          </div>
+          <div class="pages flex evenPage">
+            <p class="pageTitle"><span class="purpleLetter">M</span>emberships</p>
+            <!-- <p class="pageBody">
+              Memberships are not available at this time. Please contact our office for more information.
+            </p> -->
+            <p class="pageBody">Memberships are not available at this time. Feel free to check back for updated information.</p>
+          </div>
+          <div class="pages flex">
+            <p class="pageTitle"><span class="purpleLetter">P</span>artnerships</p>
+            <!-- <p class="pageBody">
+               <span class="businessName">Entertainment Ready</span> welcomes partnerships with local businesses, non-profit organizations, professionals offering related specialized services, and interns in the Philadelphia area. If you are interested and would like more information, please email us
+              at: entertainmentready@yahoo.com
+            </p> -->
+            <p class="pageBody">Entertainment Ready welcomes partnerships with local businesses (private and public sector), non-profits, professionals that offer related specialized services, and interns in the Philadelphia area. If you are interested and would like more information, please email us at: entertainmentready@gmail.com</p>
+          </div>
+          <div class="pages flex evenPage">
+            <p class="pageTitle"><span class="purpleLetter">C</span>ontact Us</p>
+            <p class="pageBody contactText">Where you can find us:</p>
+            <p class="pageBody contactText">Subscribe to our youtube channel, <br>follow us on twitter, <br>like us on facebook and <br>join the conversation.</p>
+            <div class="contactPageBody flex">
+              <div class="c-icon pointer"><img class="contact-icon" src="./img/facebook.png" alt=""> facebook.com/entertainmentready</div>
+              <div class="c-icon pointer"><img class="contact-icon" src="./img/twitter.png" alt=""> entertainmentready@MalibuD2</div>
+              <div class="c-icon pointer"><img class="contact-icon" src="./img/youtube.png" alt=""> entertainmentreadytv</div>
+              <div class="c-icon pointer"><img class="contact-icon" src="./img/yahoo.jpg" alt=""> entertainmentready@yahoo.com</div>
+            </div>
+          </div>
+        </div>
+        <div class="picSection flex">
+          <div class="pic picOne"></div>
+          <div class="pic picTwo"></div>
+          <div class="pic picThree"></div>
+          <div class="pic picFour"></div>
+          <div class="pic picFive"></div>
+          <div class="pic picSix"></div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </body>
 

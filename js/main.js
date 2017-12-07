@@ -1,31 +1,10 @@
 "use strict";
 
-$(document).ready(() => {
-
-  const fadeInRight = (selector, time) => {
-    $(selector).css("color", "#FFF");
-
-    $(selector).animate({
-      left: "0",
-    }, {
-      duration: time,
-      start: () => { $(selector).fadeIn(250) }
-    });
-  }
-
-  setTimeout(function () { fadeInRight(".menuOption[data='4']", 50) }, 200);
-  setTimeout(function () { fadeInRight(".menuOption[data='3']", 50) }, 400);
-  setTimeout(function () { fadeInRight(".menuOption[data='2']", 50) }, 600);
-  setTimeout(function () { fadeInRight(".menuOption[data='1']", 50) }, 800);
-  setTimeout(function () { fadeInRight(".menuOption[data='0']", 50) }, 1000);
-
-});
-
 const app = angular.module("app", []);
 
-app.controller("main", ["$scope", "$timeout", "$interval", function($scope, $timeout, $interval){
+app.controller("main", ["$scope", "$rootScope", "$timeout", "$interval", function($scope, $rootScope, $timeout, $interval){
   $scope.company = "entertainment ready";
-
+  $rootScope.page = 'kids';
   $scope.navigate = (e) => {
     if($scope.canNav){
       const className = e.target.className;
@@ -70,32 +49,76 @@ app.controller("main", ["$scope", "$timeout", "$interval", function($scope, $tim
     }
 
   }
+  $scope.randomBoxColor;
   $scope.boxes = [1,   2,  3,  4,  5,  6,  7,  8,  9, 10,
                   11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
                   21, 22, 23, 24, 25];
   $scope.randomHighlight = (low, high) => {
     const randomBoxDataNumber = Math.floor(Math.random() * high) + low;
-    $(".colorBox[data="+randomBoxDataNumber+"]").css("backgroundColor", "#5C00BB");
+    $(".colorBox[data="+randomBoxDataNumber+"]").css("backgroundColor", $scope.randomBoxColor);
   }
-
+  $scope.kidsPage = () => {
+    $('.landingPage').hide();
+    $scope.randomBoxColor = '#ff4f4d';
+    $timeout(() => { $('.kids').show() });
+    $timeout(() => { choiceMade = true }, 200);
+  }
+  $scope.datePage = () => {
+    $('.landingPage').hide();
+    $scope.randomBoxColor = '#5C00BB';
+    $timeout(() => { $('.dating').show() });
+    $timeout(() => { choiceMade = true }, 200);
+  }
   $scope.resetHighlight = () => {
     $(".colorBox").css("backgroundColor", "");
   }
 
+  let choiceMade = false;
+  $(".menuOption[data='5']").css('color', '#fff');
+  const waitingOnPageLoad = $interval(() => {
+    if(choiceMade){
+      $interval.cancel(waitingOnPageLoad);
+
+      const fadeInRight = (selector, time) => {
+        $(selector).css("color", "#FFF");
+
+        $(selector).animate({
+          left: "0",
+        }, {
+          duration: time,
+          start: () => { $(selector).fadeIn(250) }
+        });
+      }
+      $timeout(function () { fadeInRight(".menuOption[data='4']", 50) }, 200);
+      $timeout(function () { fadeInRight(".menuOption[data='3']", 50) }, 400);
+      $timeout(function () { fadeInRight(".menuOption[data='2']", 50) }, 600);
+      $timeout(function () { fadeInRight(".menuOption[data='1']", 50) }, 800);
+      $timeout(function () { fadeInRight(".menuOption[data='0']", 50) }, 1000);
+
+      $timeout(() => {
+        $(".colorBoxHolder").fadeIn(3000);
+        $scope.randomHighlight(1, 25);
+        $scope.randomHighlight(1, 25);
+        $scope.randomHighlight(1, 25);
+        $scope.randomHighlight(1, 25);
+      }, 1200);
+      $interval(function () {
+        if($scope.homepageCheckVar){
+          $scope.resetHighlight();
+          $scope.randomHighlight(1, 25);
+          $scope.randomHighlight(1, 25);
+          $scope.randomHighlight(1, 25);
+          $scope.randomHighlight(1, 25);
+        }
+      }, 6000);
+    }
+  });
   $scope.canNav = false;
 
   $timeout(function () {
     $(".hometext").fadeIn(2000);
     $scope.canNav = true;
   }, 1000);
-
-  $timeout(() => {
-    $(".colorBoxHolder").fadeIn(3000);
-    $scope.randomHighlight(1, 25);
-    $scope.randomHighlight(1, 25);
-    $scope.randomHighlight(1, 25);
-    $scope.randomHighlight(1, 25);
-  }, 1200);
 
   $scope.homepage = true;
   $scope.homepageCheckVar = true;
@@ -114,23 +137,12 @@ app.controller("main", ["$scope", "$timeout", "$interval", function($scope, $tim
     $scope.homepageCheck();
   }, 10);
 
-  $interval(function () {
-    if($scope.homepageCheckVar){
-      $scope.resetHighlight();
-      $scope.randomHighlight(1, 25);
-      $scope.randomHighlight(1, 25);
-      $scope.randomHighlight(1, 25);
-      $scope.randomHighlight(1, 25);
-    }
-  }, 6000);
-
   let open = false;
   const $event = $(".eventPreview");
   const $eventHeading = $(".eventHeading");
   const $eventPageBody = $(".eventPageBody");
   const $eventDetailsBox = $('.eventDetailsBox');
-  const closedHeight = "15em";
-  const openHeight = "40em";
+
   $eventDetailsBox.fadeOut(10);
 
   $scope.eventClick = (e) => {

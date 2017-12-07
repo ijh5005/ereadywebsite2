@@ -18,11 +18,75 @@ html, body {
 
 .pointer {
   cursor: pointer;
+  user-select: none;
 }
 
 .container {
   height: 100vh;
   width: 100vw;
+}
+
+.landingPage {
+  height: 100%;
+  width: 100%;
+}
+
+.kidsEventsPage,
+.datingEventsPage {
+  flex-direction: column;
+  height: 100%;
+  left: 0;
+  position: relative;
+  transition: left 500s;
+  width: 50%;
+}
+
+.landingPageHead {
+  width: 10em;
+  font-size: 4em;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 1em;
+}
+
+.landingPageText {
+  width: 20em;
+  font-size: 1.8em;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 4em;
+}
+
+.pageColor {
+  width: 50%;
+}
+
+.kidsEventsPage {
+  color: #000;
+}
+
+.datingEventsPage {
+  color: #fff;
+  background-color: #0d001a;
+}
+
+.kidsEventsPage .btn {
+  background-color: #cc0300;
+}
+
+.datingEventsPage .btn {
+  background-color: #4d0099;
+}
+
+.btn {
+  height: 4em;
+  width: 20em;
+}
+
+.btn p {
+  color: #fff;
+  font-size: 3em;
+  margin: 0;
 }
 
 .logo {
@@ -134,13 +198,13 @@ html, body {
   height: 90vh;
   position: absolute;
   top: 10vh;
-  width: 75vw;
+  width: 70vw;
   z-index: -1;
 }
 
 .liner {
-  left: 75vw;
-  width: 25vw;
+  left: 70vw;
+  width: 30vw;
 }
 
 .colorBoxHolder {
@@ -173,7 +237,7 @@ html, body {
   position: relative;
   top: 0vh;
   transition: top 2s;
-  width: 75vw;
+  width: 70vw;
 }
 
 .pages {
@@ -224,7 +288,7 @@ html, body {
   position: relative;
   top: 0vh;
   transition: top 2s;
-  width: 25vw;
+  width: 30vw;
 }
 
 .picSection .pic {
@@ -232,7 +296,7 @@ html, body {
   height: 100%;
   /*opacity: 0.2;////////////////////////////////////////////////////////////*/
   opacity: 0.4;
-  width: 25vw;
+  width: 30vw;
 }
 
 .contactPageBody {
@@ -275,6 +339,30 @@ html, body {
 
 .picSix {
   background-image: url("../img/six.jpg");
+}
+
+.picOneKid {
+  background-image: url("../img/kid1.png");
+}
+
+.picTwoKid {
+  background-image: url("../img/kid2.png");
+}
+
+.picThreeKid {
+  background-image: url("../img/kid3.png");
+}
+
+.picFourKid {
+  background-image: url("../img/kid4.png");
+}
+
+.picFiveKid {
+  background-image: url("../img/kid5.png");
+}
+
+.picSixKid {
+  background-image: url("../img/kid6.png");
 }
 
 /*EVENT PAGE*/
@@ -363,7 +451,45 @@ html, body {
   width: 12em;
 }
 
+/*KIDS PAGE CUSTOMIZATIONS*/
+.kids .purpleLetter {
+  background-color: #cc0300;
+}
 
+.kids .e,
+.kids .r {
+    background-color: #cc0300;
+}
+
+.kids .letterHolder .e,
+.kids .letterHolder .r {
+  background-color: transparent;
+}
+
+.kids {
+  color: #cc0300;
+}
+
+.kids .nav {
+  background-color: #ff4f4d;
+}
+
+.kids .purpleText,
+.kids .pageTitle {
+  color: #ff6462;
+}
+
+.kids .eventTitle {
+  background-color: #ff6462;
+}
+
+.kids .menuOption {
+  color: #ff4f4d;
+}
+
+.kids .picSection {
+  background-color: #ff8280;
+}
 
 /*MEDIA QUERY*/
 
