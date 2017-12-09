@@ -13,9 +13,29 @@
 </head>
 
 <body>
+
   <div class="container" ng-app="app" ng-controller="main">
 
-    <div class="landingPage flex ">
+    <div class="landingPageBg none"></div>
+
+    <div class="landingPage2 flex none">
+      <div class="changingbackground flex">
+        <div class="colorBoxHolder flex">
+          <div data="{{ box }}" class="colorBox" ng-repeat="box in boxes"></div>
+        </div>
+      </div>
+      <div class="landingPageLogo"></div>
+      <div class="landingPageBtns flex">
+        <div class="kidsEventsPageBtn flex pointer">
+          <p class="pointer">FOR KIDS</p>
+        </div>
+        <div class="datingEventsPageBtn flex pointer">
+          <p class="pointer">SINGLES EVENTS</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="landingPage flex none">
       <div class="kidsEventsPage flex">
         <p class="landingPageHead">Plan a play date</p>
         <p class="landingPageText">seasonal events for children living in or visiting the Philadelphia area</p>
