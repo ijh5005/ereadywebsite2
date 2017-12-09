@@ -21,6 +21,10 @@ html, body {
   user-select: none;
 }
 
+a {
+  text-decoration: none;
+}
+
 .container {
   height: 100vh;
   width: 100vw;
@@ -269,7 +273,7 @@ html, body {
   flex-direction: column;
   font-size: 1.6em;
   margin: 0 0 1em 0;
-  width: 50vw;
+  width: 52vw;
   z-index: 5;
 }
 
