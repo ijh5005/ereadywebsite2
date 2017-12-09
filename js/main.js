@@ -135,7 +135,7 @@ app.controller("main", ["$scope", "$rootScope", "$timeout", "$interval", functio
 
   $interval(function () {
     $scope.homepageCheck();
-  }, 10);
+  });
 
   let open = false;
   const $event = $(".eventPreview");
