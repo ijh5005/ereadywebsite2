@@ -50,7 +50,6 @@ app.controller("main", ["$scope", "$rootScope", "$timeout", "$interval", functio
 
   }
   $scope.randomBoxColor = '#5C00BB';
-  $scope.landingPage = true;
   $scope.boxes = [1,   2,  3,  4,  5,  6,  7,  8,  9, 10,
                   11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
                   21, 22, 23, 24, 25];
@@ -74,28 +73,7 @@ app.controller("main", ["$scope", "$rootScope", "$timeout", "$interval", functio
     $(".colorBox").css("backgroundColor", "");
   }
 
-  if($scope.landingPage){
-    $timeout(() => {
-      $(".colorBoxHolder").show();
-      $scope.randomHighlight(1, 25);
-      $scope.randomHighlight(1, 25);
-      $scope.randomHighlight(1, 25);
-      $scope.randomHighlight(1, 25);
-    }, 1200);
-    const landingChangingBackground = $interval(function () {
-      if($scope.homepageCheckVar){
-        $scope.resetHighlight();
-        $scope.randomHighlight(1, 25);
-        $scope.randomHighlight(1, 25);
-        $scope.randomHighlight(1, 25);
-        $scope.randomHighlight(1, 25);
-      }
-    }, 6000);
-  } else {
-    $interval.cancel(landingChangingBackground);
-  }
-
-  let choiceMade = false;
+  let choiceMade = true; //false;
   $(".menuOption[data='5']").css('color', '#fff');
   const waitingOnPageLoad = $interval(() => {
     if(choiceMade){
