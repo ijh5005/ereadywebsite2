@@ -19,7 +19,6 @@
     <div class="dating">
       <div class="nav flex">
         <div data="0" ng-click="navigate($event)" class="logo flex pointer">
-          <!-- <p class="logoText"> {{company}} </p> -->
           <div class="logoBox">
             <div class="e flex">E<span class="logoFinish">ntertainment</span></div>
             <div class="r flex">R<span class="logoFinish">eady</span></div>
@@ -44,23 +43,27 @@
         </div>
       </div>
       <div class="changingbackground liner"></div>
-      <div class="intro flex">
+      <div class="pagesSection flex">
         <div class="action flex">
+
+          <!-- HOMEPAGE -->
           <div class="pages flex">
             <p class="hometext pointer">Join our <span class="purpleText"><span class="purpleLetter">d</span>ating</span> community</p>
           </div>
+
+          <!-- ABOUT US PAGE -->
           <div class="pages flex evenPage">
             <p class="pageTitle"><span class="purpleLetter">A</span>bout Us</p>
             <p class="pageBody">Entertainment Ready is a entertainment company specializing in dating workshops/events for Philadelphia singles, focusing on safety and fun. We have coined this style of dating, “PG Dating” as our workshops and events are meant to PREPARE and GUIDE our singles in the dating world. We focus not on match-making, rather, the empowerment of our singles by using self discovery and teaching self worth. We blend dating education and fun interactive games tailored to the modern day bachelor and bachelorette..</p>
             <p class="pageBody">By taking the face-to-face dating experience in combination with fun interactive games to stimulate real chemistry, we have been able to create the best recipe for a lifetime of success stories.</p>
           </div>
+
+          <!-- EVENTS PAGE -->
           <div class="pages flex">
             <div class="flex eventPageBody">
               <p class="pageTitle"><span class="purpleLetter">E</span>vents</p>
               <p class="pageBody">Entertainment Ready hosts workshops and events each month, throughout the year. These workshops/events may resemble fun and familiar game shows such as; Family Feud and The Dating Game. Check out our upcoming events for this month and if any event catches your eye, simply SIGN UP.</p>
             </div>
-
-
             <div class="eventPreview">
               <div class="eventHeading flex">
                 <div class="eventTitle flex">
@@ -68,49 +71,46 @@
                 </div>
                 <div class="events flex">
                   <div class="event flex pointer firstBox"> <!-- ng-click='eventClick($event)'> -->
-                    <!-- <p>Workshop</p> -->
                     <p class="date">January</p>
                   </div>
                   <div class="event flex pointer secondBox"> <!-- ng-click='eventClick($event)'> -->
-                    <!-- <p>Workshop</p> -->
                     <p class="date">February</p>
                   </div>
                   <div class="event flex pointer thirdBox"> <!-- ng-click='eventClick($event)'> -->
-                    <!-- <p>Workshop</p> -->
                     <p class="date">March</p>
                   </div>
                 </div>
               </div>
             </div>
-
-            <div class="eventDetailsBox">
-
-            </div>
-
-
+            <div class="eventDetailsBox"></div>
           </div>
+
+          <!-- MEMBERSHIPS PAGE -->
           <div class="pages flex evenPage">
             <p class="pageTitle"><span class="purpleLetter">M</span>emberships</p>
-            <!-- <p class="pageBody">
-              Memberships are not available at this time. Please contact our office for more information.
-            </p> -->
             <p class="pageBody">Memberships are not available at this time. Feel free to check back for updated information.</p>
           </div>
+
+          <!-- PARTNERSHIP PAGE -->
           <div class="pages flex">
             <p class="pageTitle"><span class="purpleLetter">P</span>artnerships</p>
             <p class="pageBody">Entertainment Ready welcomes partnerships with local businesses (private and public sector), non-profits, professionals that offer related specialized services, and interns in the Philadelphia area. If you are interested and would like more information, please email us at: entertainmentready@gmail.com</p>
           </div>
+
+          <!-- CONTACTS PAGE -->
           <div class="pages flex evenPage">
-            <p class="pageTitle"><span class="purpleLetter">C</span>ontact Us</p>
-            <p class="pageBody contactText">Where you can find us:</p>
-            <p class="pageBody contactText">Subscribe to our youtube channel, <br>follow us on twitter, <br>like us on facebook and <br>join the conversation.</p>
-            <div class="contactPageBody flex">
-              <div class="c-icon pointer"><img class="contact-icon" src="./img/facebook.png" alt=""><a href="https://www.facebook.com/entertainmentready"></a></div>
-              <div class="c-icon pointer"><img class="contact-icon" src="./img/twitter.png" alt=""><a href="https://twitter.com/MalibuD2"></a></div>
-              <div class="c-icon pointer"><img class="contact-icon" src="./img/youtube.png" alt=""><a href="https://www.youtube.com/channel/UCl8a4MIveT78ydPnzM7Ke2A"></a></div>
+            <p class="pageTitle eventPageLiner"><span class="purpleLetter">C</span>ontact Us</p>
+            <p class="pageBody contactText eventPageLiner">Where you can find us:</p>
+            <p class="pageBody contactText eventPageLiner">Subscribe to our youtube channel, <br>follow us on twitter, <br>like us on facebook and <br>join the conversation.</p>
+            <div class="contactPageBody flex eventPageLiner">
+              <div class="c-icon pointer"><a href="https://www.facebook.com/entertainmentready" target="_blank"><img class="contact-icon" src="./img/facebook.png" alt=""></a></div>
+              <div class="c-icon pointer"><a href="https://twitter.com/MalibuD2" target="_blank"><img class="contact-icon" src="./img/twitter.png" alt=""></a></div>
+              <div class="c-icon pointer"><a href="https://www.youtube.com/channel/UCl8a4MIveT78ydPnzM7Ke2A" target="_blank"><img class="contact-icon" src="./img/youtube.png" alt=""></a></div>
             </div>
           </div>
         </div>
+
+        <!-- SIDE PICTURE SECTION -->
         <div class="picSection flex">
           <div class="pic picOne"></div>
           <div class="pic picTwo"></div>
@@ -119,6 +119,8 @@
           <div class="pic picFive"></div>
           <div class="pic picSix"></div>
         </div>
+
+
       </div>
     </div>
 

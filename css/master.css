@@ -35,7 +35,6 @@ a {
   width: 100%;
 }
 
-.kidsEventsPage,
 .datingEventsPage {
   flex-direction: column;
   height: 100%;
@@ -65,17 +64,9 @@ a {
   width: 50%;
 }
 
-.kidsEventsPage {
-  color: #000;
-}
-
 .datingEventsPage {
   background-color: #0d001a;
   color: #fff;
-}
-
-.kidsEventsPage .btn {
-  background-color: #cc0300;
 }
 
 .datingEventsPage .btn {
@@ -147,7 +138,6 @@ a {
 }
 
 .nav {
-  /*background-color: #5C00BB;///////////////////////////////////////////////*/
   background-color: #190033;
   height: 11vh;
   justify-content: space-between;
@@ -225,7 +215,7 @@ a {
   width: 20%;
 }
 
-.intro {
+.pagesSection {
   height: 540vh;
   justify-content: space-between;
   position: relative;
@@ -234,7 +224,7 @@ a {
   z-index: 0;
 }
 
-.intro .action {
+.pagesSection .action {
   flex-direction: column;
   height: 100%;
   justify-content: flex-start;
@@ -253,9 +243,7 @@ a {
   font-style: italic;
 }
 
-.intro p {
-  /*font-size: 8em;*/
-  /*font-size: 2em;*/
+.pagesSection p {
   text-align: center;
   transition: font-size 1s;
   z-index: 5;
@@ -281,12 +269,8 @@ a {
   font-size: 5rem;
 }
 
-/*.hometext:hover {
-  font-size: 7rem;
-}*/
-
 .picSection {
-  background-color: #470091;/*///////////////////////////////////////////////*/
+  background-color: #470091;
   flex-direction: column;
   height: 100%;
   position: relative;
@@ -298,7 +282,6 @@ a {
 .picSection .pic {
   background-size: 100% 100%;
   height: 100%;
-  /*opacity: 0.2;////////////////////////////////////////////////////////////*/
   opacity: 0.4;
   width: 30vw;
 }
@@ -306,7 +289,6 @@ a {
 .contactPageBody {
   align-items: flex-start;
   align-self: flex-start;
-  flex-direction: column;
   margin-top: 2em;
 }
 
@@ -316,9 +298,9 @@ a {
 }
 
 .contact-icon {
-  height: 1em;
+  height: 1.2em;
   margin-right: 0.4em;
-  width: 1em;
+  width: 1.2em;
 }
 
 .picOne {
@@ -345,36 +327,15 @@ a {
   background-image: url("../img/six.jpg");
 }
 
-.picOneKid {
-  background-image: url("../img/kid1.png");
-}
-
-.picTwoKid {
-  background-image: url("../img/kid2.png");
-}
-
-.picThreeKid {
-  background-image: url("../img/kid3.png");
-}
-
-.picFourKid {
-  background-image: url("../img/kid4.png");
-}
-
-.picFiveKid {
-  background-image: url("../img/kid5.png");
-}
-
-.picSixKid {
-  background-image: url("../img/kid6.png");
-}
-
 /*EVENT PAGE*/
 .eventPageBody {
   flex-direction: column;
   position: relative;
   top: 0px;
   transition: top 1s;
+}
+.eventPageLiner {
+  align-self: center;
 }
 
 .eventPreview {
@@ -411,6 +372,8 @@ a {
   width: 33.34%;
 }
 
+/*ADD WHEN SHE HAS EVENT DETAILS
+ALSO EVENT BOX FUNTIONANLITY*/
 /*.event:hover {
   height: 6em;
   transition: height 0.5s, width 0.5s;
@@ -439,7 +402,6 @@ a {
 
 .eventDetails {
   background-color: #5C00BB;
-/*   background-color: #000; */
   flex-direction: column;
   height: 25em;
   width: 100%;
@@ -455,47 +417,7 @@ a {
   width: 12em;
 }
 
-/*KIDS PAGE CUSTOMIZATIONS*/
-.kids .purpleLetter {
-  background-color: #cc0300;
-}
-
-.kids .e,
-.kids .r {
-    background-color: #cc0300;
-}
-
-.kids .letterHolder .e,
-.kids .letterHolder .r {
-  background-color: transparent;
-}
-
-.kids {
-  color: #cc0300;
-}
-
-.kids .nav {
-  background-color: #ff4f4d;
-}
-
-.kids .purpleText,
-.kids .pageTitle {
-  color: #ff6462;
-}
-
-.kids .eventTitle {
-  background-color: #ff6462;
-}
-
-.kids .menuOption {
-  color: #ff4f4d;
-}
-
-.kids .picSection {
-  background-color: #ff8280;
-}
-
-/*MEDIA QUERY*/
+/**************   MEDIA QUERY   **************/
 
 @media (max-hieght: 850px) {
   .colorBoxHolder {
@@ -504,7 +426,7 @@ a {
 }
 
 @media (max-width: 1340px) {
-  .intro .action {
+  .pagesSection .action {
     width: 100vw;
   }
   .picSection {
@@ -530,6 +452,8 @@ a {
   .events {
     width: 100%;
   }
+
+
   /*SCROLLBAR STYLNG*/
   ::-webkit-scrollbar {
   	width: 0px;
@@ -539,17 +463,13 @@ a {
   	background-color: #000;
   }
   /*SCROLLBAR STYLNG END*/
+
+
   .evenPage {
-    background-color: hsl(269, 100%, 96%);
-    /*background-color: #190033;*/
     background-color: #25004d;
     color: #fff;
   }
 
-  .kids .evenPage{
-    background-color: #e60400;
-    color: #fff;
-  }
   .pages {
     width: 100%;
   }
@@ -558,8 +478,6 @@ a {
   .contactPageBody {
     align-self: center;
   }
-
-
 
   body {
     font-size: 2.3em;
@@ -623,71 +541,3 @@ a {
     margin-top: 1em;
   }
 }
-
-
-
-
-
-
-
-
-/*LANDING PAGE*/
-
-/*.landingPageBg {
-  background-image: url('../img/phila.jpg');
-  background-size: 100% 100%;
-  height: 100vh;
-  left: 0;
-  position: absolute;
-  opacity: 0.4;
-  top: 0;
-  width: 100vw;
-}
-
-.landingPage2 {
-  flex-direction: column;
-  height: 100vh;
-  width: 100vw;
-}
-
-.landingPageLogo {
-  background-image: url('../img/logo.png');
-  background-size: 100% 100%;
-  height: 16em;
-  position: relative;
-  top: -7em;
-  width: 40em;
-}
-
-.landingPageBtns {
-  justify-content: space-between;
-  margin-top: 4em;
-  width: 36em;
-}
-
-.kidsEventsPageBtn,
-.datingEventsPageBtn {
-  border: 0.2em solid #333;
-  height: 4em;
-  width: 16em;
-}
-
-.kidsEventsPageBtn p,
-.datingEventsPageBtn p {
-  font-size: 2em;
-  font-weight: bold;
-}*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*end*/

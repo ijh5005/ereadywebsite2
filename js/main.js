@@ -4,31 +4,18 @@ const app = angular.module("app", []);
 
 app.controller("main", ["$scope", "$rootScope", "$timeout", "$interval", function($scope, $rootScope, $timeout, $interval){
   $scope.company = "entertainment ready";
-  $rootScope.page = 'kids';
+  $scope.randomBoxColor = '#5C00BB';
+  $scope.boxes = [1,   2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25];
+  $scope.homepage = true;
+  $scope.homepageCheckVar = true;
   $scope.navigate = (e) => {
-    if($scope.canNav){
-      const className = e.target.className;
-      const selector = e.target.attributes.data.nodeValue;
-      if (className.includes("homeNav") || className.includes("logo")) {
-        $scope.movePage(0);
-        $scope.navHighlight(0);
-      } else if (className.includes("aboutNav")) {
-        $scope.movePage(-90);
-        $scope.navHighlight(1);
-      } else if (className.includes("eventNav")) {
-        $scope.movePage(-180);
-        $scope.navHighlight(2);
-      } else if (className.includes("membershipsNav")) {
-        $scope.movePage(-270);
-        $scope.navHighlight(3);
-      } else if (className.includes("partnerships")) {
-        $scope.movePage(-360);
-        $scope.navHighlight(4);
-      } else if (className.includes("contactNav")) {
-        $scope.movePage(-450);
-        $scope.navHighlight(5);
-      }
-    }
+    const className = e.target.className;
+    if (className.includes("homeNav") || className.includes("logo")) { movePageFn(0, 0) }
+    else if (className.includes("aboutNav")) { movePageFn(-90, 1) }
+    else if (className.includes("eventNav")) { movePageFn(-180, 2) }
+    else if (className.includes("membershipsNav")) { movePageFn(-270, 3) }
+    else if (className.includes("partnerships")) { movePageFn(-360, 4) }
+    else if (className.includes("contactNav")) { movePageFn(-450, 5) }
   };
   $scope.movePage = (location) => {
     $(".pages").fadeOut("200");
@@ -49,80 +36,13 @@ app.controller("main", ["$scope", "$rootScope", "$timeout", "$interval", functio
     }
 
   }
-  $scope.randomBoxColor = '#5C00BB';
-  $scope.boxes = [1,   2,  3,  4,  5,  6,  7,  8,  9, 10,
-                  11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
-                  21, 22, 23, 24, 25];
   $scope.randomHighlight = (low, high) => {
     const randomBoxDataNumber = Math.floor(Math.random() * high) + low;
     $(".colorBox[data="+randomBoxDataNumber+"]").css("backgroundColor", $scope.randomBoxColor);
   }
-  $scope.kidsPage = () => {
-    $('.landingPage').hide();
-    $scope.randomBoxColor = '#ff4f4d';
-    $timeout(() => { $('.kids').show() });
-    $timeout(() => { choiceMade = true }, 200);
-  }
-  $scope.datePage = () => {
-    $('.landingPage').hide();
-    $scope.randomBoxColor = '#5C00BB';
-    $timeout(() => { $('.dating').show() });
-    $timeout(() => { choiceMade = true }, 200);
-  }
   $scope.resetHighlight = () => {
     $(".colorBox").css("backgroundColor", "");
   }
-
-  let choiceMade = true; //false;
-  $(".menuOption[data='5']").css('color', '#fff');
-  const waitingOnPageLoad = $interval(() => {
-    if(choiceMade){
-      $interval.cancel(waitingOnPageLoad);
-
-      const fadeInRight = (selector, time) => {
-        $(selector).css("color", "#FFF");
-
-        $(selector).animate({
-          left: "0",
-        }, {
-          duration: time,
-          start: () => { $(selector).fadeIn(250) }
-        });
-      }
-      $timeout(function () { fadeInRight(".menuOption[data='4']", 50) }, 200);
-      $timeout(function () { fadeInRight(".menuOption[data='3']", 50) }, 400);
-      $timeout(function () { fadeInRight(".menuOption[data='2']", 50) }, 600);
-      $timeout(function () { fadeInRight(".menuOption[data='1']", 50) }, 800);
-      $timeout(function () { fadeInRight(".menuOption[data='0']", 50) }, 1000);
-
-      $timeout(() => {
-        $(".colorBoxHolder").fadeIn(3000);
-        $scope.randomHighlight(1, 25);
-        $scope.randomHighlight(1, 25);
-        $scope.randomHighlight(1, 25);
-        $scope.randomHighlight(1, 25);
-      }, 1200);
-      $interval(function () {
-        if($scope.homepageCheckVar){
-          $scope.resetHighlight();
-          $scope.randomHighlight(1, 25);
-          $scope.randomHighlight(1, 25);
-          $scope.randomHighlight(1, 25);
-          $scope.randomHighlight(1, 25);
-        }
-      }, 6000);
-    }
-  });
-  $scope.canNav = false;
-
-  $timeout(function () {
-    $(".hometext").fadeIn(2000);
-    $scope.canNav = true;
-  }, 1000);
-
-  $scope.homepage = true;
-  $scope.homepageCheckVar = true;
-
   $scope.homepageCheck = () => {
     if($scope.homepage === true){
       $scope.homepageCheckVar = true;
@@ -132,19 +52,6 @@ app.controller("main", ["$scope", "$rootScope", "$timeout", "$interval", functio
       $(".colorBoxHolder").fadeOut(600);
     }
   }
-
-  $interval(function () {
-    $scope.homepageCheck();
-  });
-
-  let open = false;
-  const $event = $(".eventPreview");
-  const $eventHeading = $(".eventHeading");
-  const $eventPageBody = $(".eventPageBody");
-  const $eventDetailsBox = $('.eventDetailsBox');
-
-  $eventDetailsBox.fadeOut(10);
-
   $scope.eventClick = (e) => {
     const event = e.currentTarget.className;
     if(open === true){
@@ -165,5 +72,56 @@ app.controller("main", ["$scope", "$rootScope", "$timeout", "$interval", functio
     }
     open = !open;
   }
+
+  //CONSTANTS
+  let open = false;
+  const $event = $(".eventPreview");
+  const $eventHeading = $(".eventHeading");
+  const $eventPageBody = $(".eventPageBody");
+  const $eventDetailsBox = $('.eventDetailsBox');
+
+  //METHODS
+  const movePageFn = (position, highlightNumber) => {
+    $scope.movePage(position);
+    $scope.navHighlight(highlightNumber);
+  }
+  const fadeInRight = (selector, time) => {
+    $(selector).css("color", "#FFF");
+
+    $(selector).animate({
+      left: "0",
+    }, {
+      duration: time,
+      start: () => { $(selector).fadeIn(250) }
+    });
+  }
+
+  //PAGE START UP FUNCTIONALITY
+  $eventDetailsBox.fadeOut(10);
+  $timeout(function () { fadeInRight(".menuOption[data='4']", 50) }, 200);
+  $timeout(function () { fadeInRight(".menuOption[data='3']", 50) }, 400);
+  $timeout(function () { fadeInRight(".menuOption[data='2']", 50) }, 600);
+  $timeout(function () { fadeInRight(".menuOption[data='1']", 50) }, 800);
+  $timeout(function () { fadeInRight(".menuOption[data='0']", 50) }, 1000);
+  $timeout(() => {
+    $(".colorBoxHolder").fadeIn(3000);
+    $scope.randomHighlight(1, 25);
+    $scope.randomHighlight(1, 25);
+    $scope.randomHighlight(1, 25);
+    $scope.randomHighlight(1, 25);
+  }, 1200);
+  $interval(function () {
+    if($scope.homepageCheckVar){
+      $scope.resetHighlight();
+      $scope.randomHighlight(1, 25);
+      $scope.randomHighlight(1, 25);
+      $scope.randomHighlight(1, 25);
+      $scope.randomHighlight(1, 25);
+    }
+  }, 6000);
+  $timeout(function () { $(".hometext").fadeIn(2000) }, 1000);
+  $interval(function () {
+    $scope.homepageCheck();
+  });
 
 }]);
